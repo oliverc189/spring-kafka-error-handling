@@ -1,0 +1,4 @@
+kafka:
+  bootstrapAddress: localhost:9092
+  playgroundTopic: playground.topic
+  groupId: playground-1
