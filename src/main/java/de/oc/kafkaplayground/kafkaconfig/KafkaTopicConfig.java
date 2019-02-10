@@ -16,8 +16,14 @@ public class KafkaTopicConfig {
     @Value("${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
-    @Value("${kafka.playgroundTopic}")
+    @Value("${kafka.topic.playground}")
     private String playgroundTopic;
+
+    @Value("${kafka.topic.deadletter.suffix.recoverable}")
+    private String recoverableDltSuffix;
+
+    @Value("${kafka.topic.deadletter.suffix.unrecoverable}")
+    private String unrecoverableDltSuffix;
 
     @Bean
     public KafkaAdmin kafkaAdmin(){
@@ -27,8 +33,18 @@ public class KafkaTopicConfig {
     }
 
     @Bean
-    public NewTopic newTopic(){
+    public NewTopic newPlaygroundTopic(){
         return new NewTopic(playgroundTopic, 1 , (short) 1);
+    }
+
+    @Bean
+    public NewTopic newRecoverableDltTopic(){
+        return new NewTopic(playgroundTopic + recoverableDltSuffix, 1 , (short) 1);
+    }
+
+    @Bean
+    public NewTopic newUnrecoverableDltTopic(){
+        return new NewTopic(playgroundTopic + unrecoverableDltSuffix, 1 , (short) 1);
     }
 
 }

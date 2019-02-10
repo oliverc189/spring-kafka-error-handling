@@ -19,7 +19,7 @@ public class WebController {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Value("${kafka.playgroundTopic}")
+    @Value("${kafka.topic.playground}")
     private String playgroundTopic;
 
 

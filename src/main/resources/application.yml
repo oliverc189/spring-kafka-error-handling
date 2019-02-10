@@ -1,4 +1,9 @@
 kafka:
   bootstrapAddress: localhost:9092
-  playgroundTopic: playground.topic
+  topic:
+    playground: playground.topic
+    deadletter:
+      suffix:
+        recoverable: .recoverable.dlt
+        unrecoverable: .unrecoverable.dlt
   groupId: playground-1
