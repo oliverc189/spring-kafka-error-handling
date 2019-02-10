@@ -2,8 +2,6 @@ package de.oc.kafkaplayground.listener;
 
 import de.oc.kafkaplayground.exception.RecoverableException;
 import de.oc.kafkaplayground.exception.UnrecoverableException;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
